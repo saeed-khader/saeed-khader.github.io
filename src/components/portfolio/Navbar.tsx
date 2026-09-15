@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useLang } from "@/lib/i18n";
@@ -53,12 +53,12 @@ export function Navbar({ onOpenModal, dark, onToggleTheme }: { onOpenModal: () =
       )}
     >
       <nav
-        aria-label={t({ ar: "التنقل الرئيسي", en: "Main navigation" })}
+        aria-label={t({ ar: "ط§ظ„طھظ†ظ‚ظ„ ط§ظ„ط±ط¦ظٹط³ظٹ", en: "Main navigation" })}
         className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8 lg:px-12"
       >
         <a href="#home" className="group flex items-center gap-3" aria-label={t(content.name)}>
           <span className="grid size-10 place-items-center overflow-hidden rounded-xl border border-border/80 bg-surface/80 transition-all duration-300 group-hover:border-signal/40 group-hover:shadow-[0_0_30px_-12px_var(--signal)]">
-            <img src="/brand/saeed-avatar.png" alt="سعيد خضر الزهراني" className="size-full object-cover" />
+            <img src="/saeed-portfolio-v2/brand/saeed-avatar.png" alt="ط³ط¹ظٹط¯ ط®ط¶ط± ط§ظ„ط²ظ‡ط±ط§ظ†ظٹ" className="size-full object-cover" />
           </span>
           <span className="hidden text-sm font-semibold tracking-tight text-foreground sm:block">
             {t(content.shortName)}
@@ -85,7 +85,7 @@ export function Navbar({ onOpenModal, dark, onToggleTheme }: { onOpenModal: () =
 
         <div className="flex items-center gap-2">
           <LanguageSwitcher className="hidden sm:inline-flex" />
-          <button type="button" onClick={onToggleTheme} aria-label={dark ? "تفعيل الوضع النهاري" : "تفعيل الوضع الليلي"} className="grid size-10 place-items-center rounded-full border border-border bg-surface/75 text-foreground transition-all duration-300 hover:border-signal/45 hover:shadow-[0_0_28px_-12px_var(--signal)]">
+          <button type="button" onClick={onToggleTheme} aria-label={dark ? "طھظپط¹ظٹظ„ ط§ظ„ظˆط¶ط¹ ط§ظ„ظ†ظ‡ط§ط±ظٹ" : "طھظپط¹ظٹظ„ ط§ظ„ظˆط¶ط¹ ط§ظ„ظ„ظٹظ„ظٹ"} className="grid size-10 place-items-center rounded-full border border-border bg-surface/75 text-foreground transition-all duration-300 hover:border-signal/45 hover:shadow-[0_0_28px_-12px_var(--signal)]">
             {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>
           <button
@@ -108,7 +108,7 @@ export function Navbar({ onOpenModal, dark, onToggleTheme }: { onOpenModal: () =
         <div className="flex items-center justify-between px-5 py-5 sm:px-8">
           <span className="flex items-center gap-3 text-sm font-semibold">
             <span className="grid size-9 place-items-center overflow-hidden rounded-lg border border-border">
-              <img src="/brand/saeed-avatar.png" alt="سعيد خضر الزهراني" className="size-full object-cover" />
+              <img src="/saeed-portfolio-v2/brand/saeed-avatar.png" alt="ط³ط¹ظٹط¯ ط®ط¶ط± ط§ظ„ط²ظ‡ط±ط§ظ†ظٹ" className="size-full object-cover" />
             </span>
             {t(content.shortName)}
           </span>
@@ -138,7 +138,7 @@ export function Navbar({ onOpenModal, dark, onToggleTheme }: { onOpenModal: () =
         <div className="mt-8 px-5 sm:px-8">
           <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <button type="button" onClick={onToggleTheme} aria-label={dark ? "الوضع النهاري" : "الوضع الليلي"} className="grid size-10 place-items-center rounded-full border border-border bg-surface/70">
+          <button type="button" onClick={onToggleTheme} aria-label={dark ? "ط§ظ„ظˆط¶ط¹ ط§ظ„ظ†ظ‡ط§ط±ظٹ" : "ط§ظ„ظˆط¶ط¹ ط§ظ„ظ„ظٹظ„ظٹ"} className="grid size-10 place-items-center rounded-full border border-border bg-surface/70">
             {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>
         </div>
@@ -147,3 +147,4 @@ export function Navbar({ onOpenModal, dark, onToggleTheme }: { onOpenModal: () =
     </header>
   );
 }
+
