@@ -1,0 +1,20 @@
+// @lovable.dev/vite-tanstack-config already includes the required plugins.
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+
+export default defineConfig({
+  vite: {
+    base: "/saeed-portfolio/",
+  },
+
+  tanstackStart: {
+    server: {
+      entry: "server",
+    },
+
+    prerender: {
+      enabled: true,
+      crawlLinks: false,
+      autoSubfolderIndex: true,
+    },
+  },
+});
