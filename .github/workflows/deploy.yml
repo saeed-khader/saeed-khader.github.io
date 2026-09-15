@@ -1,0 +1,102 @@
+﻿name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Fix GitHub Pages asset paths
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          base = "/saeed-portfolio-v2/"
+          public = Path(".output/public")
+
+          extensions = {
+              ".html",
+              ".js",
+              ".mjs",
+              ".css",
+              ".json",
+              ".map",
+          }
+
+          replacements = {
+              '"/brand/': f'"{base}brand/',
+              "'/brand/": f"'{base}brand/",
+              '"/saeed-alzahrani-cv.pdf"': f'"{base}saeed-alzahrani-cv.pdf"',
+              "'/saeed-alzahrani-cv.pdf'": f"'{base}saeed-alzahrani-cv.pdf'",
+              'href="/"': f'href="{base}"',
+          }
+
+          for file in public.rglob("*"):
+              if not file.is_file() or file.suffix not in extensions:
+                  continue
+
+              try:
+                  text = file.read_text(encoding="utf-8")
+              except UnicodeDecodeError:
+                  continue
+
+              original = text
+
+              for old, new in replacements.items():
+                  text = text.replace(old, new)
+
+              if text != original:
+                  file.write_text(text, encoding="utf-8")
+
+          print("GitHub Pages paths fixed successfully.")
+          PY
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
