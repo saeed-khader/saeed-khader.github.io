@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { ArrowRight, Download, GraduationCap, Mail, MapPin, ShieldCheck } from "lucide-react";
 import { CTAButton, MetaLabel, Reveal, Section, SectionHeading } from "./primitives";
 import { CopyEmailButton } from "./CopyEmailButton";
@@ -19,7 +19,7 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
           <Reveal className="order-2 lg:order-1">
             <div className="character-stage relative mx-auto w-full max-w-[520px] overflow-hidden rounded-[2rem] border border-signal/20 bg-surface/55 shadow-[0_30px_90px_-45px_var(--signal)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,color-mix(in_oklab,var(--signal)_18%,transparent),transparent_55%)]" />
-              <img src="/saeed-portfolio-v2/brand/saeed-character-clean.png" alt="ط´ط®طµظٹط© ط³ط¹ظٹط¯ ط§ظ„ط²ظ‡ط±ط§ظ†ظٹ ط§ظ„طھظ‚ظ†ظٹط©" className="relative z-10 h-auto w-full object-cover object-center mix-blend-normal" />
+              <img src="/brand/saeed-character-clean.png" alt="شخصية سعيد الزهراني التقنية" className="relative z-10 h-auto w-full object-cover object-center mix-blend-normal" />
             </div>
           </Reveal>
 
@@ -37,10 +37,10 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
               <h1 className="display-xl mt-4 max-w-3xl text-foreground">{t(content.name)}</h1>
             </Reveal>
             <Reveal delay={200}>
-              <p className="mt-4 text-lg font-semibold text-signal sm:text-xl">ط£ط®طµط§ط¦ظٹ طھظ‚ظ†ظٹط© ظ…ط¹ظ„ظˆظ…ط§طھ <span className="text-muted-foreground">|</span> ط¯ط¹ظ… طھظ‚ظ†ظٹ <span className="text-muted-foreground">|</span> ط´ط¨ظƒط§طھ</p>
+              <p className="mt-4 text-lg font-semibold text-signal sm:text-xl">أخصائي تقنية معلومات <span className="text-muted-foreground">|</span> دعم تقني <span className="text-muted-foreground">|</span> شبكات</p>
             </Reveal>
             <Reveal delay={260}>
-              <p className="body-lg mt-6 max-w-2xl text-muted-foreground">ط£ط³ط§ط¹ط¯ ظپظٹ ط­ظ„ ط§ظ„ظ…ط´ظƒظ„ط§طھ ط§ظ„طھظ‚ظ†ظٹط©طŒ ط¯ط¹ظ… ط§ظ„ظ…ط³طھط®ط¯ظ…ظٹظ†طŒ ظˆطھط´ط®ظٹطµ ط£ط¹ط·ط§ظ„ ط§ظ„ط£ظ†ط¸ظ…ط© ظˆط§ظ„ط´ط¨ظƒط§طھ â€” ظ…ط¹ ط®ظ„ظپظٹط© ط£ظƒط§ط¯ظٹظ…ظٹط© ظپظٹ طھظ‚ظ†ظٹط© ط§ظ„ظ…ط¹ظ„ظˆظ…ط§طھ ظˆط¥ط¯ط§ط±ط© ط§ظ„ط´ط¨ظƒط§طھ ظˆط£ظ…ظ†ظ‡ط§.</p>
+              <p className="body-lg mt-6 max-w-2xl text-muted-foreground">أساعد في حل المشكلات التقنية، دعم المستخدمين، وتشخيص أعطال الأنظمة والشبكات — مع خلفية أكاديمية في تقنية المعلومات وإدارة الشبكات وأمنها.</p>
             </Reveal>
             <Reveal delay={320}>
               <div className="mt-9 flex flex-wrap gap-3">
@@ -60,14 +60,14 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
 
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <Reveal delay={100}><div className="panel lift p-5"><MetaLabel>GPA</MetaLabel><p className="mt-3 font-mono text-3xl font-semibold">{e.gpa}<span className="text-sm text-muted-foreground"> / {e.gpaMax}</span></p><p className="mt-1 text-xs text-signal">{t(e.honors)}</p></div></Reveal>
-          <Reveal delay={150}><div className="panel lift p-5"><MetaLabel>{t(content.experience.label)}</MetaLabel><p className="mt-3 text-2xl font-bold">7 ط£ط´ظ‡ط±</p><p className="mt-1 text-xs text-muted-foreground">ظ†ظˆظپظ…ط¨ط± 2025 â€” ظ…ط§ظٹظˆ 2026</p></div></Reveal>
-          <Reveal delay={200}><div className="panel lift p-5"><MetaLabel>{t(e.label)}</MetaLabel><p className="mt-3 text-lg font-bold">{t(e.degree)}</p><p className="mt-1 text-xs text-muted-foreground">{t(e.university)} آ· {e.year}</p></div></Reveal>
-          <Reveal delay={250}><div className="panel lift p-5"><MetaLabel>PROJECT</MetaLabel><p className="mt-3 text-2xl font-bold text-signal">MyFCITR</p><p className="mt-1 text-xs text-muted-foreground">ظ…ظ†طµط© ط±ظ‚ظ…ظٹط© ظ„ط®ط¯ظ…ط§طھ ط§ظ„ط·ظ„ط§ط¨ ط§ظ„ط£ظƒط§ط¯ظٹظ…ظٹط©</p></div></Reveal>
+          <Reveal delay={150}><div className="panel lift p-5"><MetaLabel>{t(content.experience.label)}</MetaLabel><p className="mt-3 text-2xl font-bold">7 أشهر</p><p className="mt-1 text-xs text-muted-foreground">نوفمبر 2025 — مايو 2026</p></div></Reveal>
+          <Reveal delay={200}><div className="panel lift p-5"><MetaLabel>{t(e.label)}</MetaLabel><p className="mt-3 text-lg font-bold">{t(e.degree)}</p><p className="mt-1 text-xs text-muted-foreground">{t(e.university)} · {e.year}</p></div></Reveal>
+          <Reveal delay={250}><div className="panel lift p-5"><MetaLabel>PROJECT</MetaLabel><p className="mt-3 text-2xl font-bold text-signal">MyFCITR</p><p className="mt-1 text-xs text-muted-foreground">منصة رقمية لخدمات الطلاب الأكاديمية</p></div></Reveal>
         </div>
 
         <Reveal delay={320}>
           <div className="tool-strip mt-4 panel flex flex-wrap items-center justify-center gap-x-7 gap-y-3 px-5 py-4 text-xs text-muted-foreground">
-            <span className="font-semibold text-foreground">ط§ظ„طھظ‚ظ†ظٹط§طھ ظˆط§ظ„ط£ط¯ظˆط§طھ</span><span>Windows</span><span>Linux</span><span>Networking</span><span>Troubleshooting</span><span>Microsoft 365</span><span>Python</span><span>SQL Server</span><span>Git</span>
+            <span className="font-semibold text-foreground">التقنيات والأدوات</span><span>Windows</span><span>Linux</span><span>Networking</span><span>Troubleshooting</span><span>Microsoft 365</span><span>Python</span><span>SQL Server</span><span>Git</span>
           </div>
         </Reveal>
       </div>
@@ -409,4 +409,3 @@ export function Footer() {
 export function FloatingCta() {
   return null;
 }
-

@@ -1,4 +1,4 @@
-﻿export function renderErrorPage(): string {
+export function renderErrorPage(): string {
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -22,10 +22,9 @@
       <p>Something went wrong on our end. You can try refreshing or head back home.</p>
       <div class="actions">
         <button class="primary" onclick="location.reload()">Try again</button>
-        <a class="secondary" href="/saeed-portfolio-v2/">Go home</a>
+        <a class="secondary" href="/">Go home</a>
       </div>
     </div>
   </body>
 </html>`;
 }
-
