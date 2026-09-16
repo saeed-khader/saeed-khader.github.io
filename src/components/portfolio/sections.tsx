@@ -37,7 +37,7 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
                   <span aria-hidden className="status-dot size-1.5 rounded-full bg-ok" />
                   {t(content.ui.availability)}
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2/40 px-3.5 py-1.5 text-[0.7rem] font-medium text-muted-foreground">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-signal/25 bg-signal/5 px-3.5 py-1.5 text-[0.7rem] font-medium text-signal">
                   <GraduationCap className="size-3.5" />
                   {t(content.ui.freshGrad)}
                 </span>
