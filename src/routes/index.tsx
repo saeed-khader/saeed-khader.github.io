@@ -31,11 +31,11 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         property: "og:image",
-        content: "https://shlvvn.github.io/saeed-portfolio-new/brand/saeed-avatar.png",
+        content: "https://shlvvn.github.io/saeed-portfolio/brand/saeed-avatar.png",
       },
       {
         name: "twitter:image",
-        content: "https://shlvvn.github.io/saeed-portfolio-new/brand/saeed-avatar.png",
+        content: "https://shlvvn.github.io/saeed-portfolio/brand/saeed-avatar.png",
       },
     ],
   }),

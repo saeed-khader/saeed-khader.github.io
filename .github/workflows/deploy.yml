@@ -40,7 +40,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
 
-          base = "/saeed-portfolio-new/"
+          base = "/saeed-portfolio/"
           public = Path(".output/public")
 
           extensions = {
