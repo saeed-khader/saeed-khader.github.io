@@ -134,7 +134,7 @@ export const content = {
       },
       {
         period: { ar: "2021 — حتى الآن", en: "2021 — Present" },
-        title: { ar: "صاحب متجر إلكتروني", en: "E-commerce Store Owner" },
+        title: { ar: "مالك متجر إلكتروني", en: "E-commerce Store Owner" },
         org: { ar: "مشروع تجاري خاص", en: "Independent business" },
         meta: {
           ar: "5 سنوات خبرة عملية في التجارة الإلكترونية",
