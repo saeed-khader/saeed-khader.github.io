@@ -407,11 +407,6 @@ export const content = {
         },
       },
     ],
-    previewLabel: { ar: "Project Interface Preview", en: "Project Interface Preview" },
-    previewNote: {
-      ar: "تمثيل تجريدي لواجهة المنصة — الصور الفعلية تُضاف عند توفرها.",
-      en: "Abstract representation of the platform interface — actual screens to be added when available.",
-    },
   },
   certifications: {
     title: { ar: "الشهادات", en: "Certifications" },

@@ -321,25 +321,6 @@ export function Project({ onOpenModal }: { onOpenModal: () => void }) {
           </Reveal>
         ))}
       </div>
-
-      <Reveal delay={140}>
-        <figure className="panel mt-4 overflow-hidden p-6">
-          <MetaLabel>{t(p.previewLabel)}</MetaLabel>
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="rounded-xl border border-border bg-surface-2/40 p-4">
-                <span className="block h-2 w-16 rounded-full bg-signal/40" />
-                <span className="mt-3 block h-2 w-full rounded-full bg-foreground/10" />
-                <span className="mt-2 block h-2 w-4/5 rounded-full bg-foreground/10" />
-                <span className="mt-2 block h-2 w-2/3 rounded-full bg-foreground/10" />
-              </div>
-            ))}
-          </div>
-          <figcaption className="mt-5 text-xs text-muted-foreground/70">
-            {t(p.previewNote)}
-          </figcaption>
-        </figure>
-      </Reveal>
     </Section>
   );
 }
