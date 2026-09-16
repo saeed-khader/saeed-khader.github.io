@@ -92,7 +92,7 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
             <button
               type="button"
               onClick={() =>
-                document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+                window.scrollBy({ top: window.innerHeight * 0.85, behavior: "smooth" })
               }
               aria-label={t({ ar: "انزل للتعرف علي", en: "Scroll down to learn more" })}
               className="scroll-cue mx-auto mt-8 grid size-11 place-items-center rounded-full border border-signal/30 bg-signal/10 text-signal lg:hidden"
