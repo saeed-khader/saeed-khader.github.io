@@ -57,6 +57,8 @@ jobs:
               "'/brand/": f"'{base}brand/",
               '"/saeed-alzahrani-cv.pdf"': f'"{base}saeed-alzahrani-cv.pdf"',
               "'/saeed-alzahrani-cv.pdf'": f"'{base}saeed-alzahrani-cv.pdf'",
+              '"/favicon.ico"': f'"{base}favicon.ico"',
+              "'/favicon.ico'": f"'{base}favicon.ico'",
               'href="/"': f'href="{base}"',
           }
 
