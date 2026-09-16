@@ -197,7 +197,9 @@
 }
 
 html[dir="rtl"] .meta-label {
-  letter-spacing: 0.08em;
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+  font-size: 0.8rem;
 }
 
 /* ---------- surfaces ---------- */
