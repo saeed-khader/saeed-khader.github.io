@@ -1,5 +1,6 @@
 export const EMAIL = "saeeedkhzh@gmail.com";
-export const CV_PATH = "/saeed-alzahrani-cv.pdf";
+export const CV_PATH_AR = "/saeed-khader-cv-ar.pdf";
+export const CV_PATH_EN = "/saeed-khader-cv-en.pdf";
 
 export const MAIL_SUBJECT = "فرصة وظيفية — سعيد خضر الزهراني";
 export const MAIL_BODY = `مرحبًا سعيد،
@@ -47,6 +48,8 @@ export const content = {
     exploreCta: { ar: "استكشف أعمالي", en: "Explore my work" },
     cvCta: { ar: "تحميل السيرة الذاتية", en: "Download CV" },
     cvCtaPdf: { ar: "تحميل السيرة الذاتية PDF", en: "Download CV (PDF)" },
+    cvArabic: { ar: "بالعربية", en: "Arabic" },
+    cvEnglish: { ar: "بالإنجليزية", en: "English" },
     copyEmail: { ar: "نسخ البريد", en: "Copy email" },
     copied: { ar: "تم نسخ البريد الإلكتروني", en: "Email address copied" },
     sendOpportunity: { ar: "أرسل فرصة وظيفية", en: "Send an opportunity" },
@@ -528,8 +531,8 @@ export const content = {
   modal: {
     title: { ar: "لنختصر الطريق.", en: "Let's keep it short." },
     hint: {
-      ar: "لا يوجد نظام بريد في الخلف — سيُفتح تطبيق البريد لديك برسالة مكتوبة مسبقًا.",
-      en: "There is no backend mail service here — your email client opens with a pre-written message.",
+      ar: "راح يفتح تطبيق البريد لديك تلقائيًا برسالة جاهزة، أو تقدر تتواصل مباشرة عبر واتساب.",
+      en: "Your mail app will open automatically with a ready message — or reach out directly on WhatsApp.",
     },
     fields: {
       name: { ar: "اسمك", en: "Your name" },
