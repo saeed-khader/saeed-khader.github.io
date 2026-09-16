@@ -42,6 +42,7 @@ export const content = {
   location: { ar: "جدة / رابغ — المملكة العربية السعودية", en: "Jeddah / Rabigh — Saudi Arabia" },
   ui: {
     availability: { ar: "متاح لوظيفة تقنية", en: "Available for a technical role" },
+    freshGrad: { ar: "خريج حديث 2026", en: "Class of 2026 Graduate" },
     contactCta: { ar: "تواصل معي", en: "Get in touch" },
     exploreCta: { ar: "استكشف أعمالي", en: "Explore my work" },
     cvCta: { ar: "تحميل السيرة الذاتية", en: "Download CV" },

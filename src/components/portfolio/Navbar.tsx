@@ -100,9 +100,9 @@ export function Navbar({
               <span className="flex min-w-0 items-center gap-2.5 text-sm font-semibold text-foreground">
                 <span className="grid size-9 shrink-0 place-items-center overflow-hidden rounded-lg border border-border bg-surface/70">
                   <AvatarImg
-                    src="/brand/saeed-avatar.png"
-                    alt="سعيد خضر الزهراني"
-                    className="size-full object-cover"
+                    src="/brand/logo-sk.webp"
+                    alt="شعار سعيد خضر الزهراني"
+                    className="size-full object-contain p-1.5"
                   />
                 </span>
                 <span className="truncate">{t(content.shortName)}</span>
@@ -197,9 +197,9 @@ export function Navbar({
           >
             <span className="grid size-9 shrink-0 place-items-center overflow-hidden rounded-xl border border-border/80 bg-surface/80 transition-all duration-300 sm:size-10 group-hover:border-signal/40 group-hover:shadow-[0_0_30px_-12px_var(--signal)]">
               <AvatarImg
-                src="/brand/saeed-avatar.png"
-                alt="سعيد خضر الزهراني"
-                className="size-full object-cover"
+                src="/brand/logo-sk.webp"
+                alt="شعار سعيد خضر الزهراني"
+                className="size-full object-contain p-1.5"
               />
             </span>
 

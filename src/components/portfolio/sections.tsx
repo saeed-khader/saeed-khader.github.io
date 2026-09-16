@@ -20,22 +20,28 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14">
           <Reveal className="order-2 lg:order-1">
-            <div className="character-stage relative mx-auto w-full max-w-[520px] overflow-hidden rounded-[2rem] border border-signal/20 bg-surface/55 shadow-[0_30px_90px_-45px_var(--signal)]">
+            <div className="character-stage relative mx-auto flex w-full max-w-[520px] items-center justify-center overflow-hidden rounded-[2rem] border border-signal/20 bg-surface/55 p-12 shadow-[0_30px_90px_-45px_var(--signal)] sm:p-16">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,color-mix(in_oklab,var(--signal)_18%,transparent),transparent_55%)]" />
               <img
-                src="/brand/saeed-character-clean.png"
-                alt="شخصية سعيد الزهراني التقنية"
-                className="relative z-10 h-auto w-full object-cover object-center mix-blend-normal"
+                src="/brand/logo-sk.webp"
+                alt="شعار سعيد خضر الزهراني — SK"
+                className="relative z-10 h-auto w-full object-contain drop-shadow-[0_20px_45px_color-mix(in_oklab,var(--signal)_35%,transparent)]"
               />
             </div>
           </Reveal>
 
           <div className="order-1 lg:order-2" dir="rtl">
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-signal/25 bg-signal/5 px-4 py-1.5 text-xs font-medium text-signal">
-                <span aria-hidden className="status-dot size-1.5 rounded-full bg-ok" />
-                {t(content.ui.availability)}
-              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-2 rounded-full border border-signal/25 bg-signal/5 px-4 py-1.5 text-xs font-medium text-signal">
+                  <span aria-hidden className="status-dot size-1.5 rounded-full bg-ok" />
+                  {t(content.ui.availability)}
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2/40 px-3.5 py-1.5 text-[0.7rem] font-medium text-muted-foreground">
+                  <GraduationCap className="size-3.5" />
+                  {t(content.ui.freshGrad)}
+                </span>
+              </div>
             </Reveal>
             <Reveal delay={80} className="mt-7">
               <MetaLabel>{t(content.hero.kicker)}</MetaLabel>
