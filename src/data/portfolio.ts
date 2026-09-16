@@ -92,7 +92,7 @@ export const content = {
     ],
   },
   education: {
-    label: { ar: "EDUCATION / KAU", en: "EDUCATION / KAU" },
+    label: { ar: "الدرجة العلمية", en: "EDUCATION / KAU" },
     gpa: "4.52",
     gpaMax: "5.00",
     honors: { ar: "ممتاز مع مرتبة الشرف", en: "Excellent with Honors" },
@@ -103,7 +103,7 @@ export const content = {
   },
   experience: {
     title: { ar: "لمحة مهنية", en: "Career snapshot" },
-    label: { ar: "TIMELINE / 002", en: "TIMELINE / 002" },
+    label: { ar: "الخبرة", en: "TIMELINE / 002" },
     items: [
       {
         period: { ar: "2026", en: "2026" },

@@ -105,7 +105,7 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <Reveal delay={100}>
             <div className="panel lift p-5">
-              <MetaLabel>GPA</MetaLabel>
+              <MetaLabel>{t({ ar: "المعدل", en: "GPA" })}</MetaLabel>
               <p className="mt-3 font-mono text-3xl font-semibold">
                 {e.gpa}
                 <span className="text-sm text-muted-foreground"> / {e.gpaMax}</span>
