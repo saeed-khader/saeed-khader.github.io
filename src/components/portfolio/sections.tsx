@@ -27,7 +27,7 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
       <div aria-hidden className="hero-grid pointer-events-none absolute inset-0 -z-10" />
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14">
-          <Reveal className="order-1 lg:order-1">
+          <Reveal className="order-2 lg:order-1">
             <div className="character-stage relative mx-auto flex w-full max-w-[520px] items-center justify-center overflow-hidden rounded-[2rem] border border-signal/20 bg-surface/55 p-12 shadow-[0_30px_90px_-45px_var(--signal)] sm:p-16">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,color-mix(in_oklab,var(--signal)_18%,transparent),transparent_55%)]" />
               <img
@@ -38,7 +38,7 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
             </div>
           </Reveal>
 
-          <div className="order-2 lg:order-2" dir="rtl">
+          <div className="order-1 lg:order-2" dir="rtl">
             <Reveal>
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-2 rounded-full border border-signal/25 bg-signal/5 px-4 py-1.5 text-xs font-medium text-signal">
@@ -156,6 +156,21 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
             <ChevronDown className="size-5 text-signal" />
           </button>
         </Reveal>
+
+        <button
+          type="button"
+          onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+          aria-label={t({ ar: "انزل للتعرف علي", en: "Scroll down to learn more" })}
+          className="scroll-cue relative mx-auto mb-1 mt-6 block h-16 w-28 overflow-hidden rounded-t-2xl"
+        >
+          <span className="absolute inset-x-0 -bottom-2 h-24 bg-[radial-gradient(circle_at_50%_10%,color-mix(in_oklab,var(--signal)_22%,transparent),transparent_70%)]" />
+          <img
+            src="/brand/logo-sk.webp"
+            alt=""
+            aria-hidden
+            className="absolute inset-x-0 bottom-[-10px] mx-auto w-24 opacity-90 drop-shadow-[0_10px_25px_color-mix(in_oklab,var(--signal)_45%,transparent)]"
+          />
+        </button>
       </div>
     </section>
   );
