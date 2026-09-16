@@ -35,9 +35,13 @@ export const content = {
     ar: "تقنية معلومات • شبكات • دعم فني",
     en: "Information Technology • Networking • IT Support",
   },
+  heroTagline: {
+    ar: "أخصائي تقنية معلومات | دعم فني | شبكات | خدمة عملاء",
+    en: "IT Specialist | Technical Support | Networking | Customer Service",
+  },
   location: { ar: "جدة / رابغ — المملكة العربية السعودية", en: "Jeddah / Rabigh — Saudi Arabia" },
   ui: {
-    availability: { ar: "متاح لفرص تقنية نوعية", en: "Open to meaningful IT opportunities" },
+    availability: { ar: "متاح لوظيفة تقنية", en: "Available for a technical role" },
     contactCta: { ar: "تواصل معي", en: "Get in touch" },
     exploreCta: { ar: "استكشف أعمالي", en: "Explore my work" },
     cvCta: { ar: "تحميل السيرة الذاتية", en: "Download CV" },
@@ -121,6 +125,29 @@ export const content = {
           { ar: "تحليل المشكلات المتكررة", en: "Diagnosing recurring issues" },
           { ar: "التواصل مع المستخدمين بوضوح", en: "Clear user communication" },
           { ar: "العمل ضمن الفريق التقني", en: "Collaboration within the technical team" },
+          {
+            ar: "بنيت بوتًا آليًا احترافيًا يتابع جلسات وقضايا المحامي، وينسّق مواعيدها، ويرسل تنبيهات تلقائية بمواعيدها",
+            en: "Built a professional automation bot that tracks the lawyer's sessions and cases, coordinates their appointments, and sends automatic reminders",
+          },
+        ],
+      },
+      {
+        period: { ar: "2021 — حتى الآن", en: "2021 — Present" },
+        title: { ar: "صاحب متجر إلكتروني", en: "E-commerce Store Owner" },
+        org: { ar: "مشروع تجاري خاص", en: "Independent business" },
+        meta: {
+          ar: "5 سنوات خبرة عملية في التجارة الإلكترونية",
+          en: "5 years of hands-on e-commerce experience",
+        },
+        points: [
+          {
+            ar: "تشغيل متجر إلكتروني يقدّم خدمات رقمية للعملاء",
+            en: "Running an online store that provides digital services to customers",
+          },
+          {
+            ar: "إدارة الطلبات والتواصل المباشر مع العملاء",
+            en: "Order management and direct customer communication",
+          },
         ],
       },
     ],

@@ -1,10 +1,25 @@
 import { useEffect, useState } from "react";
+import type { ImgHTMLAttributes } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useLang } from "@/lib/i18n";
 import { content, nav } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
+
+function AvatarImg({ className, ...props }: ImgHTMLAttributes<HTMLImageElement>) {
+  const [broken, setBroken] = useState(false);
+
+  if (broken) {
+    return (
+      <span className="grid size-full place-items-center bg-signal/15 text-[0.7em] font-bold text-signal">
+        س
+      </span>
+    );
+  }
+
+  return <img className={className} onError={() => setBroken(true)} {...props} />;
+}
 
 export function Navbar({
   onOpenModal,
@@ -84,7 +99,7 @@ export function Navbar({
             <div className="flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5">
               <span className="flex min-w-0 items-center gap-2.5 text-sm font-semibold text-foreground">
                 <span className="grid size-9 shrink-0 place-items-center overflow-hidden rounded-lg border border-border bg-surface/70">
-                  <img
+                  <AvatarImg
                     src="/brand/saeed-avatar.png"
                     alt="سعيد خضر الزهراني"
                     className="size-full object-cover"
@@ -181,7 +196,7 @@ export function Navbar({
             aria-label={t(content.name)}
           >
             <span className="grid size-9 shrink-0 place-items-center overflow-hidden rounded-xl border border-border/80 bg-surface/80 transition-all duration-300 sm:size-10 group-hover:border-signal/40 group-hover:shadow-[0_0_30px_-12px_var(--signal)]">
-              <img
+              <AvatarImg
                 src="/brand/saeed-avatar.png"
                 alt="سعيد خضر الزهراني"
                 className="size-full object-cover"
@@ -212,7 +227,7 @@ export function Navbar({
           </ul>
 
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-            <LanguageSwitcher className="hidden sm:inline-flex" />
+            <LanguageSwitcher />
 
             <button
               type="button"

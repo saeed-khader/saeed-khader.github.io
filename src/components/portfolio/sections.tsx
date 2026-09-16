@@ -47,8 +47,7 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             </Reveal>
             <Reveal delay={200}>
               <p className="mt-4 text-lg font-semibold text-signal sm:text-xl">
-                أخصائي تقنية معلومات <span className="text-muted-foreground">|</span> دعم تقني{" "}
-                <span className="text-muted-foreground">|</span> شبكات
+                {t(content.heroTagline)}
               </p>
             </Reveal>
             <Reveal delay={260}>

@@ -18,7 +18,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
         onClick={() => setLang("ar")}
         aria-pressed={lang === "ar"}
         className={cn(
-          "rounded-full px-3 py-1.5 text-[0.7rem] font-medium transition-all duration-300 sm:text-xs",
+          "rounded-full px-2 py-1 text-[0.65rem] font-medium transition-all duration-300 sm:px-3 sm:py-1.5 sm:text-xs",
           lang === "ar"
             ? "bg-surface-2 text-foreground shadow-sm"
             : "text-muted-foreground hover:text-foreground",
@@ -32,7 +32,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
         onClick={() => setLang("en")}
         aria-pressed={lang === "en"}
         className={cn(
-          "rounded-full px-3 py-1.5 text-[0.7rem] font-medium tracking-wide transition-all duration-300 sm:text-xs",
+          "rounded-full px-2 py-1 text-[0.65rem] font-medium tracking-wide transition-all duration-300 sm:px-3 sm:py-1.5 sm:text-xs",
           lang === "en"
             ? "bg-surface-2 text-foreground shadow-sm"
             : "text-muted-foreground hover:text-foreground",

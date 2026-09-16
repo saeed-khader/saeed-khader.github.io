@@ -1,11 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Briefcase,
   Building2,
   CheckCircle2,
   ChevronDown,
+  Clipboard,
+  ClipboardCheck,
+  Loader2,
   Mail,
   MessageCircle,
+  RotateCcw,
   Send,
   User,
   X,
@@ -53,6 +57,23 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [touched, setTouched] = useState(false);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [fallback, setFallback] = useState<{ subject: string; body: string } | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const timeoutRef = useRef<number | null>(null);
+  const blurHandlerRef = useRef<(() => void) | null>(null);
+
+  const clearPendingCheck = () => {
+    if (timeoutRef.current !== null) {
+      window.clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    if (blurHandlerRef.current) {
+      window.removeEventListener("blur", blurHandlerRef.current);
+      blurHandlerRef.current = null;
+    }
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -76,15 +97,21 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
 
   useEffect(() => {
     if (!open) {
+      clearPendingCheck();
       const timeout = setTimeout(() => {
         setForm(EMPTY_FORM);
         setTouched(false);
         setSent(false);
+        setSending(false);
+        setFallback(null);
+        setCopied(false);
       }, 300);
       return () => clearTimeout(timeout);
     }
     return undefined;
   }, [open]);
+
+  useEffect(() => clearPendingCheck, []);
 
   const typeLabel = useMemo(
     () => OPPORTUNITY_TYPES.find((o) => o.value === form.type)?.[lang] ?? "",
@@ -103,11 +130,7 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
     window.open(`https://wa.me/${WHATSAPP}`, "_blank", "noopener,noreferrer");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setTouched(true);
-    if (!isValid) return;
-
+  const buildMessage = () => {
     const subject = `${typeLabel} — ${form.name}`;
 
     const body =
@@ -127,8 +150,64 @@ ${form.email ? `Reach me at: ${form.email}\n` : ""}
 Message:
 ${form.message}`;
 
+    return { subject, body };
+  };
+
+  const attemptMailto = (subject: string, body: string) => {
+    clearPendingCheck();
+    setSending(true);
+    setCopied(false);
+
+    let settled = false;
+
+    const finishSuccess = () => {
+      if (settled) return;
+      settled = true;
+      clearPendingCheck();
+      setSending(false);
+      setSent(true);
+      setFallback(null);
+    };
+
+    const onBlur = () => finishSuccess();
+    blurHandlerRef.current = onBlur;
+    window.addEventListener("blur", onBlur);
+
+    // Some browsers/OSes navigate away silently even without a "blur" event,
+    // and some show no mail client at all — we can't know for certain, so we
+    // give it a moment, and if the page never lost focus we assume no mail
+    // app is configured and fall back to a copy-able message instead of
+    // lying to the user about it having worked.
+    timeoutRef.current = window.setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      clearPendingCheck();
+      setSending(false);
+      setFallback({ subject, body });
+    }, 1200);
+
     window.location.href = mailto(subject, body);
-    setSent(true);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setTouched(true);
+    if (!isValid) return;
+
+    const { subject, body } = buildMessage();
+    attemptMailto(subject, body);
+  };
+
+  const handleCopy = async () => {
+    if (!fallback) return;
+    const text = `${lang === "ar" ? "الموضوع" : "Subject"}: ${fallback.subject}\n\n${fallback.body}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2500);
+    } catch {
+      setCopied(false);
+    }
   };
 
   const field = (key: keyof typeof m.fields) => t(m.fields[key]);
@@ -184,6 +263,73 @@ ${form.message}`;
             >
               {t({ ar: "تمام", en: "Got it" })}
             </button>
+          </div>
+        ) : fallback ? (
+          <div className="flex flex-col px-1 py-2 text-center">
+            <div className="mx-auto grid size-16 place-items-center rounded-full border border-signal/30 bg-signal/10 text-signal">
+              <Mail className="size-8" />
+            </div>
+            <h2 className="display-md mt-5 text-foreground">
+              {t({ ar: "ما لقينا تطبيق بريد على جهازك", en: "No mail app found on this device" })}
+            </h2>
+            <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              {t({
+                ar: "ما مشكلة — انسخ الرسالة وأرسلها يدويًا على البريد التالي، أو تواصل عبر واتساب.",
+                en: "No worries — copy the message and send it manually to the email below, or reach out on WhatsApp instead.",
+              })}
+            </p>
+
+            <div
+              dir="ltr"
+              className="mt-5 max-h-40 overflow-y-auto whitespace-pre-wrap rounded-2xl border border-border bg-surface-2/40 p-4 text-start text-xs leading-relaxed text-muted-foreground"
+            >
+              <span className="font-semibold text-foreground">{fallback.subject}</span>
+              {"\n\n"}
+              {fallback.body}
+            </div>
+
+            <div
+              className="mt-2 flex items-center justify-center gap-1.5 text-xs text-muted-foreground"
+              dir="ltr"
+            >
+              <Mail className="size-3.5" />
+              {EMAIL}
+            </div>
+
+            <div className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+              <button
+                type="button"
+                onClick={handleCopy}
+                className="flex items-center justify-center gap-2 rounded-full border border-signal/40 bg-signal/10 px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-signal/15"
+              >
+                {copied ? (
+                  <ClipboardCheck className="size-4 text-ok" />
+                ) : (
+                  <Clipboard className="size-4" />
+                )}
+                {copied
+                  ? t({ ar: "تم النسخ", en: "Copied" })
+                  : t({ ar: "نسخ الرسالة", en: "Copy message" })}
+              </button>
+
+              <button
+                type="button"
+                onClick={openWhatsApp}
+                className="flex items-center justify-center gap-2 rounded-full border border-border bg-surface-2/40 px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-signal/40"
+              >
+                <MessageCircle className="size-4" />
+                {t({ ar: "واتساب", en: "WhatsApp" })}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => attemptMailto(fallback.subject, fallback.body)}
+                className="flex items-center justify-center gap-2 rounded-full border border-border bg-surface-2/40 px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-signal/40"
+              >
+                <RotateCcw className="size-4" />
+                {t({ ar: "حاول مرة ثانية", en: "Try again" })}
+              </button>
+            </div>
           </div>
         ) : (
           <>
@@ -335,10 +481,20 @@ ${form.message}`;
 
               <button
                 type="submit"
-                className="group mt-1 flex w-full items-center justify-center gap-2 rounded-full bg-signal px-6 py-3 text-sm font-semibold text-accent-foreground shadow-[0_18px_45px_-20px_var(--signal)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_55px_-18px_var(--signal)] active:translate-y-0"
+                disabled={sending}
+                className="group mt-1 flex w-full items-center justify-center gap-2 rounded-full bg-signal px-6 py-3 text-sm font-semibold text-accent-foreground shadow-[0_18px_45px_-20px_var(--signal)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_55px_-18px_var(--signal)] active:translate-y-0 disabled:pointer-events-none disabled:opacity-70"
               >
-                <Send className="size-4 rtl:rotate-180 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5" />
-                {t(m.submit)}
+                {sending ? (
+                  <>
+                    <Loader2 className="size-4 animate-spin" />
+                    {t({ ar: "جارٍ المحاولة…", en: "Trying…" })}
+                  </>
+                ) : (
+                  <>
+                    <Send className="size-4 rtl:rotate-180 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5" />
+                    {t(m.submit)}
+                  </>
+                )}
               </button>
             </form>
           </>
