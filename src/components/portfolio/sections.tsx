@@ -95,15 +95,9 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
                 document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
               }
               aria-label={t({ ar: "انزل للتعرف علي", en: "Scroll down to learn more" })}
-              className="scroll-cue relative mx-auto mt-8 block h-14 w-24 overflow-hidden rounded-t-2xl lg:hidden"
+              className="scroll-cue mx-auto mt-8 grid size-11 place-items-center rounded-full border border-signal/30 bg-signal/10 text-signal lg:hidden"
             >
-              <span className="absolute inset-x-0 -bottom-2 h-24 bg-[radial-gradient(circle_at_50%_10%,color-mix(in_oklab,var(--signal)_22%,transparent),transparent_70%)]" />
-              <img
-                src="/brand/logo-sk.webp"
-                alt=""
-                aria-hidden
-                className="absolute inset-x-0 bottom-[-10px] mx-auto w-20 opacity-90 drop-shadow-[0_10px_25px_color-mix(in_oklab,var(--signal)_45%,transparent)]"
-              />
+              <ChevronDown className="size-5" />
             </button>
           </div>
         </div>
