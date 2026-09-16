@@ -169,6 +169,13 @@
   font-weight: 650;
 }
 
+.hero-name {
+  white-space: nowrap;
+  max-width: none;
+  font-size: clamp(1.4rem, 5.4vw, 3.35rem);
+  letter-spacing: -0.03em;
+}
+
 @utility display-md {
   font-size: clamp(1.3rem, 2.6vw, 1.85rem);
   line-height: 1.3;
