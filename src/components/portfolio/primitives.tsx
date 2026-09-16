@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { forwardRef, useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 export function useInView<T extends HTMLElement>(threshold = 0.15) {
@@ -115,7 +115,7 @@ export function SectionHeading({
 type CtaProps = {
   children: ReactNode;
   href?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   variant?: "solid" | "outline" | "ghost";
   size?: "md" | "lg";
   className?: string;
@@ -140,40 +140,57 @@ const sizes: Record<string, string> = {
   lg: "px-7 py-3.5 text-[0.95rem]",
 };
 
-export function CTAButton({
-  children,
-  href,
-  onClick,
-  variant = "solid",
-  size = "md",
-  className,
-  download,
-  ariaLabel,
-  type = "button",
-}: CtaProps) {
-  const cls = cn(base, variants[variant], sizes[size], className);
-  const inner = (
-    <>
-      <span className="relative z-10">{children}</span>
-    </>
-  );
+export const CTAButton = forwardRef<HTMLAnchorElement | HTMLButtonElement, CtaProps>(
+  (
+    {
+      children,
+      href,
+      onClick,
+      variant = "solid",
+      size = "md",
+      className,
+      download,
+      ariaLabel,
+      type = "button",
+      ...rest
+    },
+    ref,
+  ) => {
+    const cls = cn(base, variants[variant], sizes[size], className);
+    const inner = (
+      <>
+        <span className="relative z-10">{children}</span>
+      </>
+    );
 
-  if (href) {
+    if (href) {
+      return (
+        <a
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          href={href}
+          className={cls}
+          aria-label={ariaLabel}
+          onClick={onClick}
+          {...(download ? { download: "" } : {})}
+          {...(href.startsWith("http") ? { target: "_blank", rel: "noreferrer noopener" } : {})}
+          {...rest}
+        >
+          {inner}
+        </a>
+      );
+    }
     return (
-      <a
-        href={href}
+      <button
+        ref={ref as React.Ref<HTMLButtonElement>}
+        type={type}
+        onClick={onClick}
         className={cls}
         aria-label={ariaLabel}
-        {...(download ? { download: "" } : {})}
-        {...(href.startsWith("http") ? { target: "_blank", rel: "noreferrer noopener" } : {})}
+        {...rest}
       >
         {inner}
-      </a>
+      </button>
     );
-  }
-  return (
-    <button type={type} onClick={onClick} className={cls} aria-label={ariaLabel}>
-      {inner}
-    </button>
-  );
-}
+  },
+);
+CTAButton.displayName = "CTAButton";
