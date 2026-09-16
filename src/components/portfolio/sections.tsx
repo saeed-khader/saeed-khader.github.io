@@ -88,6 +88,23 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
                 </CTAButton>
               </div>
             </Reveal>
+
+            <button
+              type="button"
+              onClick={() =>
+                document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+              }
+              aria-label={t({ ar: "انزل للتعرف علي", en: "Scroll down to learn more" })}
+              className="scroll-cue relative mx-auto mt-8 block h-14 w-24 overflow-hidden rounded-t-2xl lg:hidden"
+            >
+              <span className="absolute inset-x-0 -bottom-2 h-24 bg-[radial-gradient(circle_at_50%_10%,color-mix(in_oklab,var(--signal)_22%,transparent),transparent_70%)]" />
+              <img
+                src="/brand/logo-sk.webp"
+                alt=""
+                aria-hidden
+                className="absolute inset-x-0 bottom-[-10px] mx-auto w-20 opacity-90 drop-shadow-[0_10px_25px_color-mix(in_oklab,var(--signal)_45%,transparent)]"
+              />
+            </button>
           </div>
         </div>
 
@@ -156,21 +173,6 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
             <ChevronDown className="size-5 text-signal" />
           </button>
         </Reveal>
-
-        <button
-          type="button"
-          onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-          aria-label={t({ ar: "انزل للتعرف علي", en: "Scroll down to learn more" })}
-          className="scroll-cue relative mx-auto mb-1 mt-6 block h-16 w-28 overflow-hidden rounded-t-2xl"
-        >
-          <span className="absolute inset-x-0 -bottom-2 h-24 bg-[radial-gradient(circle_at_50%_10%,color-mix(in_oklab,var(--signal)_22%,transparent),transparent_70%)]" />
-          <img
-            src="/brand/logo-sk.webp"
-            alt=""
-            aria-hidden
-            className="absolute inset-x-0 bottom-[-10px] mx-auto w-24 opacity-90 drop-shadow-[0_10px_25px_color-mix(in_oklab,var(--signal)_45%,transparent)]"
-          />
-        </button>
       </div>
     </section>
   );
