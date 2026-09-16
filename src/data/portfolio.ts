@@ -101,7 +101,10 @@ export const content = {
         period: { ar: "2026", en: "2026" },
         title: { ar: "بكالوريوس تقنية المعلومات", en: "Bachelor of Information Technology" },
         org: { ar: "جامعة الملك عبدالعزيز", en: "King Abdulaziz University" },
-        meta: { ar: "إدارة الشبكات وأمنها · 4.52 / 5.00 · ممتاز مع مرتبة الشرف", en: "Network Administration & Security · 4.52 / 5.00 · Excellent with Honors" },
+        meta: {
+          ar: "إدارة الشبكات وأمنها · 4.52 / 5.00 · ممتاز مع مرتبة الشرف",
+          en: "Network Administration & Security · 4.52 / 5.00 · Excellent with Honors",
+        },
         points: [] as { ar: string; en: string }[],
       },
       {
@@ -129,39 +132,147 @@ export const content = {
       {
         name: { ar: "الدعم التقني", en: "IT Support" },
         items: [
-          { n: { ar: "تشخيص المشكلات التقنية", en: "Technical troubleshooting" }, d: { ar: "الوصول إلى السبب الجذري بخطوات مرتبة وقابلة للتكرار.", en: "Reaching root cause through ordered, repeatable steps." } },
-          { n: { ar: "دعم الأجهزة", en: "Hardware support" }, d: { ar: "فحص وصيانة أجهزة المستخدمين والملحقات المرتبطة بها.", en: "Checking and maintaining user machines and attached devices." } },
-          { n: { ar: "تركيب وتهيئة البرمجيات", en: "Software installation & configuration" }, d: { ar: "تجهيز الأنظمة والتطبيقات لتعمل كما يتوقعها المستخدم.", en: "Preparing systems and applications to behave as users expect." } },
-          { n: { ar: "دعم الملحقات", en: "Peripheral support" }, d: { ar: "الطابعات والأجهزة الطرفية وإعدادات الطباعة والاتصال.", en: "Printers and peripherals, print and connectivity settings." } },
-          { n: { ar: "دعم المستخدم النهائي", en: "End-user support" }, d: { ar: "شرح الحل بلغة مفهومة وترك المستخدم قادرًا على المتابعة.", en: "Explaining the fix in plain language so the user can move on." } },
+          {
+            n: { ar: "تشخيص المشكلات التقنية", en: "Technical troubleshooting" },
+            d: {
+              ar: "الوصول إلى السبب الجذري بخطوات مرتبة وقابلة للتكرار.",
+              en: "Reaching root cause through ordered, repeatable steps.",
+            },
+          },
+          {
+            n: { ar: "دعم الأجهزة", en: "Hardware support" },
+            d: {
+              ar: "فحص وصيانة أجهزة المستخدمين والملحقات المرتبطة بها.",
+              en: "Checking and maintaining user machines and attached devices.",
+            },
+          },
+          {
+            n: { ar: "تركيب وتهيئة البرمجيات", en: "Software installation & configuration" },
+            d: {
+              ar: "تجهيز الأنظمة والتطبيقات لتعمل كما يتوقعها المستخدم.",
+              en: "Preparing systems and applications to behave as users expect.",
+            },
+          },
+          {
+            n: { ar: "دعم الملحقات", en: "Peripheral support" },
+            d: {
+              ar: "الطابعات والأجهزة الطرفية وإعدادات الطباعة والاتصال.",
+              en: "Printers and peripherals, print and connectivity settings.",
+            },
+          },
+          {
+            n: { ar: "دعم المستخدم النهائي", en: "End-user support" },
+            d: {
+              ar: "شرح الحل بلغة مفهومة وترك المستخدم قادرًا على المتابعة.",
+              en: "Explaining the fix in plain language so the user can move on.",
+            },
+          },
         ],
       },
       {
         name: { ar: "الشبكات", en: "Networking" },
         items: [
-          { n: { ar: "إدارة الشبكات", en: "Network administration" }, d: { ar: "أساس أكاديمي في إدارة الشبكات وتشغيلها.", en: "Academic grounding in administering and operating networks." } },
-          { n: { ar: "تشخيص مشكلات الشبكة", en: "Network troubleshooting" }, d: { ar: "عزل مشكلة الاتصال بين الجهاز والشبكة والخدمة.", en: "Isolating connectivity issues across device, network and service." } },
-          { n: { ar: "أساسيات الشبكات", en: "Network fundamentals" }, d: { ar: "فهم الطبقات والعناوين ومسارات البيانات.", en: "Understanding layers, addressing and data paths." } },
-          { n: { ar: "الوعي بالبنية التقنية", en: "Infrastructure awareness" }, d: { ar: "قراءة الصورة الكاملة قبل تغيير أي إعداد.", en: "Reading the whole picture before changing any setting." } },
+          {
+            n: { ar: "إدارة الشبكات", en: "Network administration" },
+            d: {
+              ar: "أساس أكاديمي في إدارة الشبكات وتشغيلها.",
+              en: "Academic grounding in administering and operating networks.",
+            },
+          },
+          {
+            n: { ar: "تشخيص مشكلات الشبكة", en: "Network troubleshooting" },
+            d: {
+              ar: "عزل مشكلة الاتصال بين الجهاز والشبكة والخدمة.",
+              en: "Isolating connectivity issues across device, network and service.",
+            },
+          },
+          {
+            n: { ar: "أساسيات الشبكات", en: "Network fundamentals" },
+            d: {
+              ar: "فهم الطبقات والعناوين ومسارات البيانات.",
+              en: "Understanding layers, addressing and data paths.",
+            },
+          },
+          {
+            n: { ar: "الوعي بالبنية التقنية", en: "Infrastructure awareness" },
+            d: {
+              ar: "قراءة الصورة الكاملة قبل تغيير أي إعداد.",
+              en: "Reading the whole picture before changing any setting.",
+            },
+          },
         ],
       },
       {
         name: { ar: "الأمن", en: "Security" },
         items: [
-          { n: { ar: "أساسيات الأمن السيبراني", en: "Cybersecurity fundamentals" }, d: { ar: "مفاهيم الحماية والمخاطر ضمن مسار إدارة الشبكات وأمنها.", en: "Protection and risk concepts from the network security track." } },
-          { n: { ar: "الوعي بأمن المعلومات", en: "Information security awareness" }, d: { ar: "التعامل مع البيانات والصلاحيات بحذر مهني.", en: "Handling data and permissions with professional care." } },
-          { n: { ar: "ممارسات تقنية آمنة", en: "Secure IT practices" }, d: { ar: "تطبيق الحل دون فتح باب جديد للمخاطر.", en: "Applying fixes without opening a new risk surface." } },
+          {
+            n: { ar: "أساسيات الأمن السيبراني", en: "Cybersecurity fundamentals" },
+            d: {
+              ar: "مفاهيم الحماية والمخاطر ضمن مسار إدارة الشبكات وأمنها.",
+              en: "Protection and risk concepts from the network security track.",
+            },
+          },
+          {
+            n: { ar: "الوعي بأمن المعلومات", en: "Information security awareness" },
+            d: {
+              ar: "التعامل مع البيانات والصلاحيات بحذر مهني.",
+              en: "Handling data and permissions with professional care.",
+            },
+          },
+          {
+            n: { ar: "ممارسات تقنية آمنة", en: "Secure IT practices" },
+            d: {
+              ar: "تطبيق الحل دون فتح باب جديد للمخاطر.",
+              en: "Applying fixes without opening a new risk surface.",
+            },
+          },
         ],
       },
       {
         name: { ar: "مهني", en: "Professional" },
         items: [
-          { n: { ar: "التواصل مع العملاء", en: "Customer communication" }, d: { ar: "لغة واضحة وهادئة حتى في وقت العطل.", en: "Clear, calm language even during outages." } },
-          { n: { ar: "حل المشكلات", en: "Problem solving" }, d: { ar: "منهج مرتب بدل المحاولات العشوائية.", en: "A structured method instead of random attempts." } },
-          { n: { ar: "العمل الجماعي", en: "Team collaboration" }, d: { ar: "تسليم واضح للمعلومة داخل الفريق.", en: "Clean handover of information inside the team." } },
-          { n: { ar: "إدارة الوقت", en: "Time management" }, d: { ar: "ترتيب الأولويات حسب أثر المشكلة.", en: "Prioritising by the impact of the issue." } },
-          { n: { ar: "الانتباه للتفاصيل", en: "Attention to detail" }, d: { ar: "التفصيل الصغير هو غالبًا سبب العطل.", en: "The small detail is usually the cause." } },
-          { n: { ar: "التعلم والتكيّف السريع", en: "Fast learning & adaptability" }, d: { ar: "بيئات وأنظمة جديدة بوقت قصير.", en: "New environments and systems in short time." } },
+          {
+            n: { ar: "التواصل مع العملاء", en: "Customer communication" },
+            d: {
+              ar: "لغة واضحة وهادئة حتى في وقت العطل.",
+              en: "Clear, calm language even during outages.",
+            },
+          },
+          {
+            n: { ar: "حل المشكلات", en: "Problem solving" },
+            d: {
+              ar: "منهج مرتب بدل المحاولات العشوائية.",
+              en: "A structured method instead of random attempts.",
+            },
+          },
+          {
+            n: { ar: "العمل الجماعي", en: "Team collaboration" },
+            d: {
+              ar: "تسليم واضح للمعلومة داخل الفريق.",
+              en: "Clean handover of information inside the team.",
+            },
+          },
+          {
+            n: { ar: "إدارة الوقت", en: "Time management" },
+            d: {
+              ar: "ترتيب الأولويات حسب أثر المشكلة.",
+              en: "Prioritising by the impact of the issue.",
+            },
+          },
+          {
+            n: { ar: "الانتباه للتفاصيل", en: "Attention to detail" },
+            d: {
+              ar: "التفصيل الصغير هو غالبًا سبب العطل.",
+              en: "The small detail is usually the cause.",
+            },
+          },
+          {
+            n: { ar: "التعلم والتكيّف السريع", en: "Fast learning & adaptability" },
+            d: {
+              ar: "بيئات وأنظمة جديدة بوقت قصير.",
+              en: "New environments and systems in short time.",
+            },
+          },
         ],
       },
     ],
@@ -170,10 +281,38 @@ export const content = {
     title: { ar: "كيف أتعامل مع المشكلة؟", en: "How I approach a problem" },
     label: { ar: "METHOD / 004", en: "METHOD / 004" },
     steps: [
-      { n: "01", t: { ar: "أفهم", en: "Understand" }, d: { ar: "أفهم المشكلة وسياقها قبل أن أبدأ بالحل.", en: "I understand the problem and its context before solving." } },
-      { n: "02", t: { ar: "أشخّص", en: "Diagnose" }, d: { ar: "أفصل الأعراض عن السبب الحقيقي للمشكلة.", en: "I separate symptoms from the real cause." } },
-      { n: "03", t: { ar: "أحل", en: "Resolve" }, d: { ar: "أطبق الحل المناسب بأقل تعقيد ممكن.", en: "I apply the right fix with the least complexity." } },
-      { n: "04", t: { ar: "أتحقق", en: "Verify" }, d: { ar: "أتأكد أن المشكلة عولجت وأن الخدمة عادت للعمل بصورة مستقرة.", en: "I confirm the issue is resolved and the service is stable again." } },
+      {
+        n: "01",
+        t: { ar: "أفهم", en: "Understand" },
+        d: {
+          ar: "أفهم المشكلة وسياقها قبل أن أبدأ بالحل.",
+          en: "I understand the problem and its context before solving.",
+        },
+      },
+      {
+        n: "02",
+        t: { ar: "أشخّص", en: "Diagnose" },
+        d: {
+          ar: "أفصل الأعراض عن السبب الحقيقي للمشكلة.",
+          en: "I separate symptoms from the real cause.",
+        },
+      },
+      {
+        n: "03",
+        t: { ar: "أحل", en: "Resolve" },
+        d: {
+          ar: "أطبق الحل المناسب بأقل تعقيد ممكن.",
+          en: "I apply the right fix with the least complexity.",
+        },
+      },
+      {
+        n: "04",
+        t: { ar: "أتحقق", en: "Verify" },
+        d: {
+          ar: "أتأكد أن المشكلة عولجت وأن الخدمة عادت للعمل بصورة مستقرة.",
+          en: "I confirm the issue is resolved and the service is stable again.",
+        },
+      },
     ],
     flow: [
       { ar: "المستخدم", en: "User" },
@@ -186,7 +325,10 @@ export const content = {
   project: {
     label: { ar: "PROJECT / MYFCITR", en: "PROJECT / MYFCITR" },
     name: "MyFCITR",
-    title: { ar: "منصة رقمية لخدمات الطلاب الأكاديمية", en: "A digital platform for student academic services" },
+    title: {
+      ar: "منصة رقمية لخدمات الطلاب الأكاديمية",
+      en: "A digital platform for student academic services",
+    },
     context: {
       ar: "مشروع التخرج — كلية الحاسبات وتقنية المعلومات، جامعة الملك عبدالعزيز. حصل المشروع على دعم مباشر من الجامعة.",
       en: "Graduation project — Faculty of Computing and Information Technology, King Abdulaziz University. The project received direct university support.",
@@ -194,29 +336,47 @@ export const content = {
     blocks: [
       {
         k: { ar: "المشكلة", en: "The problem" },
-        v: { ar: "يحتاج الطلاب إلى وصول أسهل للإجراءات الأكاديمية، وإلى قناة أوضح للتواصل مع إدارة الكلية.", en: "Students need easier access to academic processes and a clearer channel for communicating with college administration." },
+        v: {
+          ar: "يحتاج الطلاب إلى وصول أسهل للإجراءات الأكاديمية، وإلى قناة أوضح للتواصل مع إدارة الكلية.",
+          en: "Students need easier access to academic processes and a clearer channel for communicating with college administration.",
+        },
       },
       {
         k: { ar: "المقاربة", en: "The approach" },
-        v: { ar: "منصة رقمية مبنية حول الخدمات الأكاديمية التي تمس الطالب مباشرة.", en: "A digital platform designed around student-facing academic services." },
+        v: {
+          ar: "منصة رقمية مبنية حول الخدمات الأكاديمية التي تمس الطالب مباشرة.",
+          en: "A digital platform designed around student-facing academic services.",
+        },
       },
       {
         k: { ar: "الحل", en: "The solution" },
-        v: { ar: "تنقل MyFCITR التفاعلات المهمة للطالب إلى تجربة رقمية أكثر تنظيمًا ووضوحًا.", en: "MyFCITR brings important student interactions into a more structured digital experience." },
+        v: {
+          ar: "تنقل MyFCITR التفاعلات المهمة للطالب إلى تجربة رقمية أكثر تنظيمًا ووضوحًا.",
+          en: "MyFCITR brings important student interactions into a more structured digital experience.",
+        },
       },
       {
         k: { ar: "الأثر", en: "Impact" },
-        v: { ar: "تحسين سهولة الوصول وتنظيم التفاعلات الأكاديمية الموجهة للطلاب.", en: "Improved accessibility and organisation of student-facing academic interactions." },
+        v: {
+          ar: "تحسين سهولة الوصول وتنظيم التفاعلات الأكاديمية الموجهة للطلاب.",
+          en: "Improved accessibility and organisation of student-facing academic interactions.",
+        },
       },
     ],
     modules: [
       {
         t: { ar: "تسجيل المقررات", en: "Course registration" },
-        d: { ar: "يمكّن الطلاب من إدارة مقرراتهم إلكترونيًا بسرعة وسهولة.", en: "Enables students to manage their coursework electronically with speed and ease." },
+        d: {
+          ar: "يمكّن الطلاب من إدارة مقرراتهم إلكترونيًا بسرعة وسهولة.",
+          en: "Enables students to manage their coursework electronically with speed and ease.",
+        },
       },
       {
         t: { ar: "مقترحات الطلاب", en: "Student suggestions" },
-        d: { ar: "يبني جسرًا مباشرًا بين الطلاب وإدارة الكلية.", en: "Creates a bridge between students and college administration." },
+        d: {
+          ar: "يبني جسرًا مباشرًا بين الطلاب وإدارة الكلية.",
+          en: "Creates a bridge between students and college administration.",
+        },
       },
     ],
     previewLabel: { ar: "Project Interface Preview", en: "Project Interface Preview" },
@@ -229,13 +389,46 @@ export const content = {
     title: { ar: "الشهادات", en: "Certifications" },
     label: { ar: "CREDENTIALS / 005", en: "CREDENTIALS / 005" },
     items: [
-      { t: { ar: "شهادة مسار إدارة الشبكات وأمنها", en: "Network Administration & Security Track Certificate" }, i: { ar: "جامعة الملك عبدالعزيز", en: "King Abdulaziz University" } },
-      { t: { ar: "أساسيات الذكاء الاصطناعي", en: "Fundamentals of Artificial Intelligence" }, i: { ar: "سدايا", en: "SDAIA" } },
-      { t: { ar: "مفاهيم الذكاء الاصطناعي وتطبيقاته المتقدمة", en: "AI Concepts and Advanced Applications" }, i: { ar: "سدايا", en: "SDAIA" } },
-      { t: { ar: "إدارة مشاريع تقنية المعلومات", en: "IT Project Management" }, i: { ar: "دروب", en: "Doroob" } },
-      { t: { ar: "استخدام الذكاء الاصطناعي في إدارة الموارد البشرية", en: "Using AI in Human Resources Management" }, i: { ar: "دروب", en: "Doroob" } },
-      { t: { ar: "الذكاء الاصطناعي وتحليل البيانات في سوق العمل المستقبلي", en: "AI and Data Analysis in the Future Labor Market" }, i: { ar: "دروب", en: "Doroob" } },
-      { t: { ar: "الاحتفاظ بالعملاء باحترافية", en: "Professional Customer Retention" }, i: { ar: "دروب", en: "Doroob" } },
+      {
+        t: {
+          ar: "شهادة مسار إدارة الشبكات وأمنها",
+          en: "Network Administration & Security Track Certificate",
+        },
+        i: { ar: "جامعة الملك عبدالعزيز", en: "King Abdulaziz University" },
+      },
+      {
+        t: { ar: "أساسيات الذكاء الاصطناعي", en: "Fundamentals of Artificial Intelligence" },
+        i: { ar: "سدايا", en: "SDAIA" },
+      },
+      {
+        t: {
+          ar: "مفاهيم الذكاء الاصطناعي وتطبيقاته المتقدمة",
+          en: "AI Concepts and Advanced Applications",
+        },
+        i: { ar: "سدايا", en: "SDAIA" },
+      },
+      {
+        t: { ar: "إدارة مشاريع تقنية المعلومات", en: "IT Project Management" },
+        i: { ar: "دروب", en: "Doroob" },
+      },
+      {
+        t: {
+          ar: "استخدام الذكاء الاصطناعي في إدارة الموارد البشرية",
+          en: "Using AI in Human Resources Management",
+        },
+        i: { ar: "دروب", en: "Doroob" },
+      },
+      {
+        t: {
+          ar: "الذكاء الاصطناعي وتحليل البيانات في سوق العمل المستقبلي",
+          en: "AI and Data Analysis in the Future Labor Market",
+        },
+        i: { ar: "دروب", en: "Doroob" },
+      },
+      {
+        t: { ar: "الاحتفاظ بالعملاء باحترافية", en: "Professional Customer Retention" },
+        i: { ar: "دروب", en: "Doroob" },
+      },
     ],
   },
   ai: {
@@ -260,7 +453,10 @@ export const content = {
     title: { ar: "هل تبحث عن شخص يحل المشكلة؟", en: "Looking for someone who solves the problem?" },
     label: { ar: "MATCH / 007", en: "MATCH / 007" },
     cardTitle: { ar: "لديك احتياج تقني؟", en: "Do you have a technical need?" },
-    cardHint: { ar: "اختر ما يقرب من حالتك، وسأخبرك بما أستطيع تقديمه.", en: "Pick what's closest to your case and I'll tell you what I can offer." },
+    cardHint: {
+      ar: "اختر ما يقرب من حالتك، وسأخبرك بما أستطيع تقديمه.",
+      en: "Pick what's closest to your case and I'll tell you what I can offer.",
+    },
     options: [
       {
         k: "support",
@@ -269,25 +465,40 @@ export const content = {
           ar: "إذا كانت الأولوية لديك هي تقليل الأعطال، مساعدة المستخدمين، وتشخيص المشكلات بسرعة ووضوح، دعنا نتحدث.",
           en: "If your priority is fewer outages, supported users, and fast, clear diagnostics — let's talk.",
         },
-        subject: { ar: "فرصة دعم فني — سعيد خضر الزهراني", en: "IT support opportunity — Saeed Khader Alzahrani" },
+        subject: {
+          ar: "فرصة دعم فني — سعيد خضر الزهراني",
+          en: "IT support opportunity — Saeed Khader Alzahrani",
+        },
       },
       {
         k: "network",
-        label: { ar: "أحتاج شخصًا للشبكات والبنية التقنية", en: "I need someone for networking & infrastructure" },
+        label: {
+          ar: "أحتاج شخصًا للشبكات والبنية التقنية",
+          en: "I need someone for networking & infrastructure",
+        },
         answer: {
           ar: "خلفيتي الأكاديمية في إدارة الشبكات وأمنها، وأتعامل مع الشبكة كنظام مترابط لا كأجهزة منفصلة.",
           en: "My academic background is network administration and security, and I treat the network as one connected system, not separate devices.",
         },
-        subject: { ar: "فرصة شبكات وبنية تقنية — سعيد خضر الزهراني", en: "Networking & infrastructure opportunity — Saeed Khader Alzahrani" },
+        subject: {
+          ar: "فرصة شبكات وبنية تقنية — سعيد خضر الزهراني",
+          en: "Networking & infrastructure opportunity — Saeed Khader Alzahrani",
+        },
       },
       {
         k: "talent",
-        label: { ar: "أبحث عن موهبة تقنية للانضمام إلى الفريق", en: "I'm looking for IT talent to join the team" },
+        label: {
+          ar: "أبحث عن موهبة تقنية للانضمام إلى الفريق",
+          en: "I'm looking for IT talent to join the team",
+        },
         answer: {
           ar: "خريج تقنية معلومات بتقدير ممتاز مع مرتبة الشرف، بخبرة دعم فني عملية واستعداد للتعلم السريع داخل الفريق.",
           en: "An IT graduate with Excellent-with-Honors standing, real support experience, and a readiness to learn fast inside a team.",
         },
-        subject: { ar: "انضمام إلى الفريق التقني — سعيد خضر الزهراني", en: "Joining your technical team — Saeed Khader Alzahrani" },
+        subject: {
+          ar: "انضمام إلى الفريق التقني — سعيد خضر الزهراني",
+          en: "Joining your technical team — Saeed Khader Alzahrani",
+        },
       },
     ],
   },
@@ -309,7 +520,10 @@ export const content = {
   },
   cta: {
     afterExperience: { ar: "هل لديك احتياج تقني واضح؟", en: "Have a clear technical need?" },
-    afterProject: { ar: "مهتم بالمشروع أو خبرتي؟", en: "Interested in the project or my experience?" },
+    afterProject: {
+      ar: "مهتم بالمشروع أو خبرتي؟",
+      en: "Interested in the project or my experience?",
+    },
     beforeFooter: { ar: "لنتحدث.", en: "Let's talk." },
     heroInline: { ar: "لديك فرصة؟", en: "Have an opportunity?" },
   },
@@ -322,7 +536,10 @@ export const content = {
     cta: { ar: "تواصل مع سعيد", en: "Contact Saeed" },
   },
   footer: {
-    tagline: { ar: "بُني بشغف الفهم. صُمم من أجل الموثوقية.", en: "Built with curiosity. Designed for reliability." },
+    tagline: {
+      ar: "بُني بشغف الفهم. صُمم من أجل الموثوقية.",
+      en: "Built with curiosity. Designed for reliability.",
+    },
     copyright: { ar: "© 2026 سعيد خضر الزهراني", en: "© 2026 Saeed Khader Alzahrani" },
   },
 };

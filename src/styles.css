@@ -71,21 +71,21 @@
   --secondary-foreground: oklch(0.949 0.008 85);
   --muted: oklch(0.225 0.009 258);
   --muted-foreground: oklch(0.685 0.012 258);
-  --accent: oklch(0.79 0.108 205);
+  --accent: oklch(0.79 0.145 150);
   --accent-foreground: oklch(0.145 0.007 260);
-  --signal: oklch(0.79 0.108 205);
+  --signal: oklch(0.79 0.145 150);
   --ok: oklch(0.79 0.13 165);
   --destructive: oklch(0.62 0.2 25);
   --destructive-foreground: oklch(0.98 0.003 85);
   --border: oklch(0.949 0.008 85 / 10%);
   --input: oklch(0.949 0.008 85 / 14%);
-  --ring: oklch(0.79 0.108 205 / 55%);
+  --ring: oklch(0.79 0.145 150 / 55%);
 
-  --glow-accent: 0 0 0 1px oklch(0.79 0.108 205 / 22%), 0 18px 60px -24px oklch(0.79 0.108 205 / 40%);
+  --glow-accent: 0 0 0 1px oklch(0.79 0.145 150 / 22%), 0 18px 60px -24px oklch(0.79 0.145 150 / 40%);
   --shadow-lift: 0 1px 0 0 oklch(0.949 0.008 85 / 6%) inset, 0 24px 60px -30px oklch(0 0 0 / 80%);
   --gradient-atmos: radial-gradient(
     120% 80% at 78% -10%,
-    oklch(0.79 0.108 205 / 16%) 0%,
+    oklch(0.79 0.145 150 / 16%) 0%,
     transparent 62%
   );
   --gradient-hairline: linear-gradient(
@@ -135,7 +135,7 @@
   }
 
   ::selection {
-    background: oklch(0.79 0.108 205 / 30%);
+    background: oklch(0.79 0.145 150 / 30%);
   }
 
   h1,
@@ -233,7 +233,7 @@ html[dir="rtl"] .meta-label {
     box-shadow 0.45s ease;
   &:hover {
     transform: translateY(-4px);
-    border-color: oklch(0.79 0.108 205 / 34%);
+    border-color: oklch(0.79 0.145 150 / 34%);
     box-shadow: var(--glow-accent);
   }
 }
@@ -321,7 +321,7 @@ html[dir="rtl"] li {
 }
 
 @utility accent-ring {
-  box-shadow: 0 0 0 1px oklch(0.79 0.108 205 / 18%), 0 22px 70px -38px oklch(0.79 0.108 205 / 38%);
+  box-shadow: 0 0 0 1px oklch(0.79 0.145 150 / 18%), 0 22px 70px -38px oklch(0.79 0.145 150 / 38%);
 }
 
 @media (max-width: 640px) {
@@ -353,15 +353,15 @@ html[dir="rtl"] li {
   --secondary-foreground: oklch(0.22 0.035 255);
   --muted: oklch(0.94 0.015 245);
   --muted-foreground: oklch(0.47 0.025 255);
-  --accent: oklch(0.66 0.13 205);
+  --accent: oklch(0.66 0.16 150);
   --accent-foreground: oklch(0.99 0.002 90);
-  --signal: oklch(0.66 0.13 205);
+  --signal: oklch(0.66 0.16 150);
   --ok: oklch(0.63 0.13 165);
   --border: oklch(0.22 0.025 255 / 13%);
   --input: oklch(0.22 0.025 255 / 16%);
-  --ring: oklch(0.66 0.13 205 / 45%);
+  --ring: oklch(0.66 0.16 150 / 45%);
   --shadow-lift: 0 1px 0 oklch(1 0 0 / 90%) inset, 0 24px 60px -36px oklch(0.22 0.03 255 / 22%);
-  --gradient-atmos: radial-gradient(100% 75% at 75% -5%, oklch(0.66 0.13 205 / 12%), transparent 60%);
+  --gradient-atmos: radial-gradient(100% 75% at 75% -5%, oklch(0.66 0.16 150 / 12%), transparent 60%);
 }
 
 :root:not(.dark) .hero-grid {

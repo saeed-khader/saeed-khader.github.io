@@ -12,14 +12,21 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
   const e = content.education;
 
   return (
-    <section id="home" className="atmos relative overflow-hidden px-5 pt-32 pb-14 sm:px-8 md:pt-36 md:pb-20 lg:px-12">
+    <section
+      id="home"
+      className="atmos relative overflow-hidden px-5 pt-32 pb-14 sm:px-8 md:pt-36 md:pb-20 lg:px-12"
+    >
       <div aria-hidden className="hero-grid pointer-events-none absolute inset-0 -z-10" />
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14">
           <Reveal className="order-2 lg:order-1">
             <div className="character-stage relative mx-auto w-full max-w-[520px] overflow-hidden rounded-[2rem] border border-signal/20 bg-surface/55 shadow-[0_30px_90px_-45px_var(--signal)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,color-mix(in_oklab,var(--signal)_18%,transparent),transparent_55%)]" />
-              <img src="/brand/saeed-character-clean.png" alt="شخصية سعيد الزهراني التقنية" className="relative z-10 h-auto w-full object-cover object-center mix-blend-normal" />
+              <img
+                src="/brand/saeed-character-clean.png"
+                alt="شخصية سعيد الزهراني التقنية"
+                className="relative z-10 h-auto w-full object-cover object-center mix-blend-normal"
+              />
             </div>
           </Reveal>
 
@@ -34,17 +41,30 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
               <MetaLabel>{t(content.hero.kicker)}</MetaLabel>
             </Reveal>
             <Reveal delay={140}>
-              <h1 className="display-xl mt-4 max-w-3xl text-foreground">{t(content.name)}</h1>
+              <h1 className="mt-4 max-w-3xl whitespace-nowrap text-foreground font-[650] leading-tight tracking-tight text-[clamp(1.5rem,5.6vw,3.4rem)]">
+                {t(content.name)}
+              </h1>
             </Reveal>
             <Reveal delay={200}>
-              <p className="mt-4 text-lg font-semibold text-signal sm:text-xl">أخصائي تقنية معلومات <span className="text-muted-foreground">|</span> دعم تقني <span className="text-muted-foreground">|</span> شبكات</p>
+              <p className="mt-4 text-lg font-semibold text-signal sm:text-xl">
+                أخصائي تقنية معلومات <span className="text-muted-foreground">|</span> دعم تقني{" "}
+                <span className="text-muted-foreground">|</span> شبكات
+              </p>
             </Reveal>
             <Reveal delay={260}>
-              <p className="body-lg mt-6 max-w-2xl text-muted-foreground">أساعد في حل المشكلات التقنية، دعم المستخدمين، وتشخيص أعطال الأنظمة والشبكات — مع خلفية أكاديمية في تقنية المعلومات وإدارة الشبكات وأمنها.</p>
+              <p className="body-lg mt-6 max-w-2xl text-muted-foreground">
+                أساعد في حل المشكلات التقنية، دعم المستخدمين، وتشخيص أعطال الأنظمة والشبكات — مع
+                خلفية أكاديمية في تقنية المعلومات وإدارة الشبكات وأمنها.
+              </p>
             </Reveal>
             <Reveal delay={320}>
               <div className="mt-9 flex flex-wrap gap-3">
-                <CTAButton size="lg" onClick={() => document.getElementById("project")?.scrollIntoView({ behavior: "smooth" })}>
+                <CTAButton
+                  size="lg"
+                  onClick={() =>
+                    document.getElementById("project")?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
                   {t(content.ui.exploreCta)} <ArrowRight className="size-4 rtl:rotate-180" />
                 </CTAButton>
                 <CTAButton size="lg" variant="outline" href={CV_PATH} download>
@@ -59,15 +79,54 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
         </div>
 
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <Reveal delay={100}><div className="panel lift p-5"><MetaLabel>GPA</MetaLabel><p className="mt-3 font-mono text-3xl font-semibold">{e.gpa}<span className="text-sm text-muted-foreground"> / {e.gpaMax}</span></p><p className="mt-1 text-xs text-signal">{t(e.honors)}</p></div></Reveal>
-          <Reveal delay={150}><div className="panel lift p-5"><MetaLabel>{t(content.experience.label)}</MetaLabel><p className="mt-3 text-2xl font-bold">7 أشهر</p><p className="mt-1 text-xs text-muted-foreground">نوفمبر 2025 — مايو 2026</p></div></Reveal>
-          <Reveal delay={200}><div className="panel lift p-5"><MetaLabel>{t(e.label)}</MetaLabel><p className="mt-3 text-lg font-bold">{t(e.degree)}</p><p className="mt-1 text-xs text-muted-foreground">{t(e.university)} · {e.year}</p></div></Reveal>
-          <Reveal delay={250}><div className="panel lift p-5"><MetaLabel>PROJECT</MetaLabel><p className="mt-3 text-2xl font-bold text-signal">MyFCITR</p><p className="mt-1 text-xs text-muted-foreground">منصة رقمية لخدمات الطلاب الأكاديمية</p></div></Reveal>
+          <Reveal delay={100}>
+            <div className="panel lift p-5">
+              <MetaLabel>GPA</MetaLabel>
+              <p className="mt-3 font-mono text-3xl font-semibold">
+                {e.gpa}
+                <span className="text-sm text-muted-foreground"> / {e.gpaMax}</span>
+              </p>
+              <p className="mt-1 text-xs text-signal">{t(e.honors)}</p>
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="panel lift p-5">
+              <MetaLabel>{t(content.experience.label)}</MetaLabel>
+              <p className="mt-3 text-2xl font-bold">7 أشهر</p>
+              <p className="mt-1 text-xs text-muted-foreground">نوفمبر 2025 — مايو 2026</p>
+            </div>
+          </Reveal>
+          <Reveal delay={200}>
+            <div className="panel lift p-5">
+              <MetaLabel>{t(e.label)}</MetaLabel>
+              <p className="mt-3 text-lg font-bold">{t(e.degree)}</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {t(e.university)} · {e.year}
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={250}>
+            <div className="panel lift p-5">
+              <MetaLabel>PROJECT</MetaLabel>
+              <p className="mt-3 text-2xl font-bold text-signal">MyFCITR</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                منصة رقمية لخدمات الطلاب الأكاديمية
+              </p>
+            </div>
+          </Reveal>
         </div>
 
         <Reveal delay={320}>
           <div className="tool-strip mt-4 panel flex flex-wrap items-center justify-center gap-x-7 gap-y-3 px-5 py-4 text-xs text-muted-foreground">
-            <span className="font-semibold text-foreground">التقنيات والأدوات</span><span>Windows</span><span>Linux</span><span>Networking</span><span>Troubleshooting</span><span>Microsoft 365</span><span>Python</span><span>SQL Server</span><span>Git</span>
+            <span className="font-semibold text-foreground">التقنيات والأدوات</span>
+            <span>Windows</span>
+            <span>Linux</span>
+            <span>Networking</span>
+            <span>Troubleshooting</span>
+            <span>Microsoft 365</span>
+            <span>Python</span>
+            <span>SQL Server</span>
+            <span>Git</span>
           </div>
         </Reveal>
       </div>
@@ -119,7 +178,10 @@ export function Experience({ onOpenModal }: { onOpenModal: () => void }) {
                   <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
                     {item.points.map((p, j) => (
                       <li key={j} className="flex items-start gap-3 text-sm text-muted-foreground">
-                        <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-signal/70" />
+                        <span
+                          aria-hidden
+                          className="mt-2 size-1.5 shrink-0 rounded-full bg-signal/70"
+                        />
                         {t(p)}
                       </li>
                     ))}
@@ -171,7 +233,9 @@ export function Skills() {
                 <Reveal key={i} delay={i * 70}>
                   <div className="panel lift h-full p-5">
                     <p className="text-sm font-medium text-foreground">{t(it.n)}</p>
-                    <p className="mt-2.5 text-xs leading-relaxed text-muted-foreground">{t(it.d)}</p>
+                    <p className="mt-2.5 text-xs leading-relaxed text-muted-foreground">
+                      {t(it.d)}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -266,10 +330,11 @@ export function Project({ onOpenModal }: { onOpenModal: () => void }) {
               </div>
             ))}
           </div>
-          <figcaption className="mt-5 text-xs text-muted-foreground/70">{t(p.previewNote)}</figcaption>
+          <figcaption className="mt-5 text-xs text-muted-foreground/70">
+            {t(p.previewNote)}
+          </figcaption>
         </figure>
       </Reveal>
-
     </Section>
   );
 }
@@ -286,10 +351,16 @@ export function Certifications() {
           <Reveal as="div" key={i} delay={i * 60}>
             <div className="group flex items-center justify-between gap-5 border-b border-border/70 px-5 py-5 last:border-b-0 sm:px-6">
               <div className="flex min-w-0 items-center gap-4">
-                <span className="font-mono text-xs text-signal/80">{String(i + 1).padStart(2, "0")}</span>
-                <p className="text-sm font-medium text-foreground transition-colors group-hover:text-signal">{t(c.t)}</p>
+                <span className="font-mono text-xs text-signal/80">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-sm font-medium text-foreground transition-colors group-hover:text-signal">
+                  {t(c.t)}
+                </p>
               </div>
-              <span className="hidden shrink-0 text-xs text-muted-foreground sm:block">{t(c.i)}</span>
+              <span className="hidden shrink-0 text-xs text-muted-foreground sm:block">
+                {t(c.i)}
+              </span>
             </div>
           </Reveal>
         ))}
@@ -375,7 +446,9 @@ export function Contact({ onOpenModal }: { onOpenModal: () => void }) {
         <h2 className="display-lg max-w-3xl text-foreground">{t(content.cta.beforeFooter)}</h2>
       </Reveal>
       <Reveal delay={90}>
-        <p className="body-lg mt-5 max-w-2xl text-muted-foreground">{t(content.contact.statement)}</p>
+        <p className="body-lg mt-5 max-w-2xl text-muted-foreground">
+          {t(content.contact.statement)}
+        </p>
       </Reveal>
       <Reveal delay={160}>
         <div className="mt-10 flex flex-wrap items-center gap-3">

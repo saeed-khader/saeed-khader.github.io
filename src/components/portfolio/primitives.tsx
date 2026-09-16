@@ -52,7 +52,10 @@ export function Reveal({
 export function MetaLabel({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <span className={cn("meta-label inline-flex items-center gap-2", className)}>
-      <span aria-hidden className="inline-block size-1.5 rounded-full bg-signal/75 shadow-[0_0_14px_-2px_var(--signal)]" />
+      <span
+        aria-hidden
+        className="inline-block size-1.5 rounded-full bg-signal/75 shadow-[0_0_14px_-2px_var(--signal)]"
+      />
       {children}
     </span>
   );
