@@ -528,6 +528,13 @@ export const content = {
       },
     ],
   },
+  cvModal: {
+    title: { ar: "تحميل السيرة الذاتية", en: "Download CV" },
+    hint: {
+      ar: "اختر اللغة اللي تناسبك.",
+      en: "Choose the language that works for you.",
+    },
+  },
   modal: {
     title: { ar: "لنختصر الطريق.", en: "Let's keep it short." },
     hint: {

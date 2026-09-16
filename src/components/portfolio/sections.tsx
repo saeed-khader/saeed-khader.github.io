@@ -3,49 +3,11 @@ import { ArrowRight, Download, GraduationCap, Mail, MapPin, ShieldCheck } from "
 import { CTAButton, MetaLabel, Reveal, Section, SectionHeading } from "./primitives";
 import { CopyEmailButton } from "./CopyEmailButton";
 import { useLang } from "@/lib/i18n";
-import { content, mailto, CV_PATH_AR, CV_PATH_EN } from "@/data/portfolio";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
-function CvDownloadMenu({
-  size = "lg",
-  label,
-}: {
-  size?: "md" | "lg";
-  label: { ar: string; en: string };
-}) {
-  const { t } = useLang();
-
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <CTAButton size={size} variant="outline">
-          <Download className="size-4" /> {t(label)}
-        </CTAButton>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="center">
-        <DropdownMenuItem asChild className="cursor-pointer">
-          <a href={CV_PATH_AR} download>
-            {t(content.ui.cvArabic)}
-          </a>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild className="cursor-pointer">
-          <a href={CV_PATH_EN} download>
-            {t(content.ui.cvEnglish)}
-          </a>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-}
+import { content, mailto } from "@/data/portfolio";
 
 /* ---------------- HERO ---------------- */
 
-export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
+export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpenCv: () => void }) {
   const { t } = useLang();
   const e = content.education;
 
@@ -110,7 +72,9 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
                 >
                   {t(content.ui.exploreCta)} <ArrowRight className="size-4 rtl:rotate-180" />
                 </CTAButton>
-                <CvDownloadMenu size="lg" label={content.ui.cvCta} />
+                <CTAButton size="lg" variant="outline" onClick={onOpenCv}>
+                  <Download className="size-4" /> {t(content.ui.cvCta)}
+                </CTAButton>
                 <CTAButton size="lg" variant="outline" onClick={onOpenModal}>
                   <Mail className="size-4" /> {t(content.ui.contactCta)}
                 </CTAButton>
@@ -460,7 +424,13 @@ export function HireMatch() {
 
 /* ---------------- CONTACT + FOOTER ---------------- */
 
-export function Contact({ onOpenModal }: { onOpenModal: () => void }) {
+export function Contact({
+  onOpenModal,
+  onOpenCv,
+}: {
+  onOpenModal: () => void;
+  onOpenCv: () => void;
+}) {
   const { t } = useLang();
   return (
     <Section id="contact" label={t(content.contact.label)} className="atmos">
@@ -479,7 +449,10 @@ export function Contact({ onOpenModal }: { onOpenModal: () => void }) {
             <ArrowRight className="size-4 rtl:rotate-180" />
           </CTAButton>
           <CopyEmailButton size="lg" />
-          <CvDownloadMenu size="lg" label={content.ui.cvCtaPdf} />
+          <CTAButton size="lg" variant="outline" onClick={onOpenCv}>
+            <Download className="size-4" />
+            {t(content.ui.cvCtaPdf)}
+          </CTAButton>
         </div>
       </Reveal>
     </Section>

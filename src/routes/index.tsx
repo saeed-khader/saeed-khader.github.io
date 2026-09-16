@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { LangProvider } from "@/lib/i18n";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { ContactModal } from "@/components/portfolio/ContactModal";
+import { CvModal } from "@/components/portfolio/CvModal";
 import {
   About,
   Certifications,
@@ -46,8 +47,10 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [cvModalOpen, setCvModalOpen] = useState(false);
   const [dark, setDark] = useState(true);
   const open = () => setModalOpen(true);
+  const openCv = () => setCvModalOpen(true);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("saeed-theme");
@@ -66,7 +69,7 @@ function Index() {
       <div className="min-h-screen bg-background">
         <Navbar onOpenModal={open} dark={dark} onToggleTheme={() => setDark((v) => !v)} />
         <main>
-          <Hero onOpenModal={open} />
+          <Hero onOpenModal={open} onOpenCv={openCv} />
           <About />
           <Experience onOpenModal={open} />
           <Skills />
@@ -74,10 +77,11 @@ function Index() {
           <Project onOpenModal={open} />
           <Certifications />
           <HireMatch />
-          <Contact onOpenModal={open} />
+          <Contact onOpenModal={open} onOpenCv={openCv} />
         </main>
         <Footer />
         <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
+        <CvModal open={cvModalOpen} onClose={() => setCvModalOpen(false)} />
       </div>
     </LangProvider>
   );
