@@ -434,6 +434,26 @@ html[dir="rtl"] li {
   }
 }
 
+.scroll-cue {
+  animation: scroll-cue-bounce 2.2s ease-in-out infinite;
+}
+
+.scroll-cue-text {
+  text-shadow: 0 0 18px color-mix(in oklab, var(--signal) 65%, transparent);
+}
+
+@keyframes scroll-cue-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { ArrowRight, Download, GraduationCap, Mail, MapPin, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronDown,
+  Download,
+  GraduationCap,
+  Mail,
+  MapPin,
+  ShieldCheck,
+} from "lucide-react";
 import { CTAButton, MetaLabel, Reveal, Section, SectionHeading } from "./primitives";
 import { CopyEmailButton } from "./CopyEmailButton";
 import { useLang } from "@/lib/i18n";
@@ -133,6 +141,20 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
             <span>SQL Server</span>
             <span>Git</span>
           </div>
+        </Reveal>
+
+        <Reveal delay={380}>
+          <button
+            type="button"
+            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+            className="scroll-cue group mx-auto mt-12 flex flex-col items-center gap-1.5"
+            aria-label={t({ ar: "انزل للتعرف علي", en: "Scroll down to learn more" })}
+          >
+            <span className="scroll-cue-text text-xs font-semibold tracking-wide text-signal">
+              {t({ ar: "انزل للتعرف علي", en: "Scroll to learn more" })}
+            </span>
+            <ChevronDown className="size-5 text-signal" />
+          </button>
         </Reveal>
       </div>
     </section>
