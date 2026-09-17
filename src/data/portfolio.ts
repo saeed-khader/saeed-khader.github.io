@@ -304,6 +304,32 @@ export const content = {
               en: "New environments and systems in short time.",
             },
           },
+          {
+            n: { ar: "الإقناع والتواصل اللبق", en: "Persuasion & articulate communication" },
+            d: {
+              ar: "أسلوب حديث لبق مع العملاء يبني الثقة ويوصل الفكرة بسهولة.",
+              en: "An articulate, trust-building style when speaking with clients.",
+            },
+          },
+        ],
+      },
+      {
+        name: { ar: "التصميم", en: "Design" },
+        items: [
+          {
+            n: { ar: "تصميم الصور والمحتوى المرئي", en: "Graphic & visual design" },
+            d: {
+              ar: "خبرة عملية تمتد لـ 3 سنوات في تصميم الصور والمحتوى المرئي.",
+              en: "3 years of hands-on experience designing images and visual content.",
+            },
+          },
+          {
+            n: { ar: "الحس الإبداعي والفني", en: "Creative & artistic sense" },
+            d: {
+              ar: "ذوق بصري يساعد في إخراج المحتوى بشكل جذاب ومرتب.",
+              en: "A visual eye that helps present content in an appealing, polished way.",
+            },
+          },
         ],
       },
     ],
