@@ -263,7 +263,7 @@ export function Skills() {
               <div className="flex items-center gap-4">
                 <h3 className="text-sm font-semibold tracking-wide text-foreground">{t(g.name)}</h3>
                 <span aria-hidden className="h-px flex-1 bg-border/70" />
-                <span className="meta-label">{String(g.items.length).padStart(2, "0")}</span>
+                <span className="meta-label">{String(gi + 1).padStart(2, "0")}</span>
               </div>
             </Reveal>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
