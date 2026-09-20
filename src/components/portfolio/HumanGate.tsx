@@ -30,7 +30,7 @@ export function HumanGate({ children }: { children: React.ReactNode }) {
   const [checked, setChecked] = useState(false);
   const [passed, setPassed] = useState(false);
   const [closing, setClosing] = useState(false);
-  const [shake, setShake] = useState(false);
+  const [shakeSeed, setShakeSeed] = useState(0);
   const [order, setOrder] = useState<Shape[]>(SHAPES as unknown as Shape[]);
   const [targetKey, setTargetKey] = useState<Shape["key"]>(SHAPES[0].key);
 
@@ -57,11 +57,10 @@ export function HumanGate({ children }: { children: React.ReactNode }) {
       window.setTimeout(() => setPassed(true), 480);
       return;
     }
-    setShake(true);
+    setShakeSeed((s) => s + 1);
     const reshuffled = shuffle(SHAPES);
     setOrder(reshuffled);
     setTargetKey(reshuffled[Math.floor(Math.random() * reshuffled.length)]!.key);
-    window.setTimeout(() => setShake(false), 420);
   };
 
   if (!checked || passed) return <>{children}</>;
@@ -78,9 +77,10 @@ export function HumanGate({ children }: { children: React.ReactNode }) {
       >
         <div aria-hidden className="hero-grid pointer-events-none absolute inset-0" />
         <div
+          key={shakeSeed}
           className={cn(
             "premium-panel accent-ring atmos relative z-10 w-full max-w-md p-7 text-center transition-transform duration-300 sm:p-9",
-            shake && "animate-[gate-shake_0.4s_ease-in-out]",
+            shakeSeed > 0 && "animate-[gate-shake_0.4s_ease-in-out]",
             closing && "scale-95 opacity-0",
           )}
         >
