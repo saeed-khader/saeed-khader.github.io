@@ -4,6 +4,7 @@ import { LangProvider } from "@/lib/i18n";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { ContactModal } from "@/components/portfolio/ContactModal";
 import { CvModal } from "@/components/portfolio/CvModal";
+import { HumanGate } from "@/components/portfolio/HumanGate";
 import {
   About,
   Certifications,
@@ -66,23 +67,25 @@ function Index() {
 
   return (
     <LangProvider>
-      <div className="min-h-screen bg-background">
-        <Navbar onOpenModal={open} dark={dark} onToggleTheme={() => setDark((v) => !v)} />
-        <main>
-          <Hero onOpenModal={open} onOpenCv={openCv} />
-          <About />
-          <Experience onOpenModal={open} />
-          <Skills />
-          <Process />
-          <Project onOpenModal={open} />
-          <Certifications />
-          <HireMatch />
-          <Contact onOpenModal={open} onOpenCv={openCv} />
-        </main>
-        <Footer />
-        <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
-        <CvModal open={cvModalOpen} onClose={() => setCvModalOpen(false)} />
-      </div>
+      <HumanGate>
+        <div className="min-h-screen bg-background">
+          <Navbar onOpenModal={open} dark={dark} onToggleTheme={() => setDark((v) => !v)} />
+          <main>
+            <Hero onOpenModal={open} onOpenCv={openCv} />
+            <About />
+            <Experience onOpenModal={open} />
+            <Skills />
+            <Process />
+            <Project onOpenModal={open} />
+            <Certifications />
+            <HireMatch />
+            <Contact onOpenModal={open} onOpenCv={openCv} />
+          </main>
+          <Footer />
+          <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
+          <CvModal open={cvModalOpen} onClose={() => setCvModalOpen(false)} />
+        </div>
+      </HumanGate>
     </LangProvider>
   );
 }
