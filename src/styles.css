@@ -463,6 +463,20 @@ html[dir="rtl"] li {
   text-shadow: 0 0 18px color-mix(in oklab, var(--signal) 65%, transparent);
 }
 
+.scroll-cue-soft {
+  animation: scroll-cue-soft 2.4s ease-in-out infinite;
+}
+
+@keyframes scroll-cue-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
 @keyframes scroll-cue-bounce {
   0%,
   100% {

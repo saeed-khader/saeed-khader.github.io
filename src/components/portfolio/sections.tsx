@@ -123,9 +123,9 @@ export function Hero({ onOpenModal, onOpenCv }: { onOpenModal: () => void; onOpe
                 window.scrollBy({ top: window.innerHeight * 0.85, behavior: "smooth" })
               }
               aria-label={t({ ar: "انزل للتعرف علي", en: "Scroll down to learn more" })}
-              className="scroll-cue mx-auto mt-8 grid size-11 place-items-center rounded-full border border-signal/30 bg-signal/10 text-signal lg:hidden"
+              className="scroll-cue-soft scroll-cue-text mx-auto mt-8 block rounded-full border border-signal/30 bg-signal/10 px-5 py-2.5 text-sm font-semibold text-signal lg:hidden"
             >
-              <ChevronDown className="size-5" />
+              {t({ ar: "انزل للأسفل لتعرف عني أكثر", en: "Scroll down to learn more about me" })}
             </button>
           </div>
         </div>
